@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
                   height: 100,
                 ),
                 // Example of using GapHere widget to add vertical spacing
-                const GapHere(0.2),
+                const GapHere(20),
                 // Added 20% vertical spacing of the screen height
                 Container(
                   color: Colors.green,

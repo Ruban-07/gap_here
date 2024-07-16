@@ -19,7 +19,7 @@ This package simplifies the process of creating spacing between widgets in Flutt
 
 - Automatically adjust spacing direction based on the layout context.
 
-- Utilizes MediaQuery to provide percentage-based spacing, making it easy for users to specify spacing relative to the screen size. By default, the package uses MediaQuery to calculate spacing based on percentages, so users only need to provide a value like 0.1 (for 10%) or 0.5 (for 50%), eliminating the need for manual pixel calculations.
+- Utilizes MediaQuery to provide percentage-based spacing, making it easy for users to specify spacing relative to the screen size. By default, the package uses MediaQuery to calculate spacing based on percentages, so users only need to provide a value like 10 (for 10%) or 50 (for 50%), eliminating the need for manual pixel calculations.
 
 ## Screenshots 📸
 
@@ -35,7 +35,7 @@ To use this package, add `gap_here` as a dependency in your `pubspec.yaml` file.
 
 ```yaml
 dependencies:
-  gap_here: ^0.0.5
+  gap_here: ^1.0.0
 ```
 
 Then, import the package into your Dart code:
@@ -46,13 +46,13 @@ import 'package:gap_here/gap_here.dart';
 
 ## Usage 🛠️
 
-Wrap your widgets with `GapHere` and specify the desired spacing size as a percentage of the screen size.
+Wrap your widgets with `GapHere` and specify the desired spacing percent number as a percentage of the screen size.
 
 ```dart
 Column(
   children: [
     Container(color: Colors.blue, width: 100, height: 100),
-    GapHere(0.1), // Adding vertical spacing of 10% of screen height
+    GapHere(10), // Adding vertical spacing of 10% of screen height
     Container(color: Colors.green, width: 100, height: 100),
   ],
 )
@@ -62,7 +62,7 @@ Column(
 Row(
   children: [
     Container(color: Colors.blue, width: 100, height: 100),
-    GapHere(0.2), // Adding horizontal spacing of 20% of screen width
+    GapHere(20), // Adding horizontal spacing of 20% of screen width
     Container(color: Colors.green, width: 100, height: 100),
   ],
 )
@@ -96,7 +96,7 @@ class MyApp extends StatelessWidget {
                   width: 100,
                   height: 100,
                 ),
-                const GapHere(0.2), // Adding vertical spacing of 20% of screen height
+                const GapHere(20), // Adding vertical spacing of 20% of screen height
                 Container(
                   color: Colors.green,
                   width: 100,
@@ -112,7 +112,7 @@ class MyApp extends StatelessWidget {
 
 ## Properties Usage ⚙️
 
-`size` Specifies the size of the spacing to be added between widgets. The value should be provided as a double representing a percentage of the screen size.
+`percentage` Specifies the percentage of the spacing to be added between widgets. The value should be provided as a percent numbers representing a percentage of the screen size.
 
 By default, the package internally uses MediaQuery to calculate spacing based on percentages, ensuring consistency across different screen sizes and resolutions.
 

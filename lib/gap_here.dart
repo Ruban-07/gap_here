@@ -1,29 +1,31 @@
 import 'package:flutter/material.dart';
 
-/// A widget that adds spacing between its child and neighboring widgets.
+/// A widget that adds responsive spacing between its child and neighboring widgets.
 ///
-/// The `GapHere` widget creates a space of a specified size between its child widget
-/// and its neighboring widgets. It automatically adjusts the spacing direction
-/// based on the layout context in which it's used, making it easy to add
-/// spacing in both horizontal and vertical layouts.
+/// The `GapHere` widget creates a space of a specified percentage of the screen size
+/// between its child widget and its neighboring widgets. It automatically adjusts
+/// the spacing direction based on the layout context in which it's used, making it
+/// easy to add responsive spacing in both horizontal and vertical layouts.
 class GapHere extends StatelessWidget {
-  /// The size of the spacing.
+  /// The percentage of the screen size to use as spacing.
   ///
-  /// This value specifies the amount of space to be added between the child widget
-  /// and its neighboring widgets. The actual spacing size is calculated based on
-  /// the layout direction (horizontal or vertical) and the provided size value.
-  final double size;
+  /// This value specifies the percentage (from 1 to 100) of the screen size to be
+  /// used as spacing between the child widget and its neighboring widgets.
+  final double percentage;
 
   /// Creates a GapHere widget.
   ///
-  /// The [size] parameter specifies the size of the spacing to be added.
-  /// The value should be in logical pixels.
-  const GapHere(this.size, {super.key});
+  /// The [percentage] parameter specifies the percentage of the screen size to be
+  /// used as spacing. Valid values range from 1 to 100.
+  const GapHere(this.percentage, {super.key});
 
   @override
   Widget build(BuildContext context) {
     // Determine the size of the screen
     final Size screenSize = MediaQuery.of(context).size;
+
+    // Calculate the actual size based on the percentage
+    final double size = percentage / 100.0;
 
     // Check if the parent widget is a Row or Column
     final bool isRow = context.findAncestorWidgetOfExactType<Row>() != null;

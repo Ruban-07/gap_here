@@ -4,9 +4,9 @@ description: |
   A Flutter package for adding spacing between widgets in row and column layouts.
   This package simplifies the process of creating spacing between widgets in Flutter apps.
 
-version: 0.0.5
+version: 1.0.0
 
-homepage: https://github.com/Ruban-07/gap_here
+homepage: https://github.com/yavar-registry/gap_here.git
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -22,7 +22,6 @@ dev_dependencies:
   flutter_lints: ^3.0.0
 
 flutter:
-  # The following line ensures that the package is always compatible with the latest stable Flutter release.
   uses-material-design: true
 
   assets:
