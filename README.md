@@ -41,7 +41,7 @@ dependencies:
 Then, import the package into your Dart code:
 
 ```dart
-import 'package:gap_here/gap_here.dart';
+import "package:gap_here/gap_here.dart";
 ```
 
 ## Usage 🛠️
